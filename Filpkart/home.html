@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">
+        <img src="img/filpkart.png" alt="Flipkart Logo">
+      </a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for products, brands and more">
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="user-actions">
+        <a href="/login">Login</a>
+        <a href="/saller-login">Become a saller</a>
+        <a href="#">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-section">
+    <h2>Featured Products</h2>
+    <div class="products-grid" id="products-container">
+      <!-- Product Card -->
+
+
+
+
+    </div>
+  </main>
+<script>
+      function showProduct(){
+window.location.href="/login"
+
+      }
+      
+    document.addEventListener("DOMContentLoaded", () => {
+
+      function ProductsLoad() {
+        fetch("/list-products")
+
+          .then(response => response.json())
+
+
+          .then(data => {
+            const products_table = document.getElementById("products-container");
+            const length = data.length;
+            for (let i = 0; i < length; i++) {
+              products_table.innerHTML+=`  <div onclick="showProduct()" class="product-card">
+        <img src="img/${data[i].img}" alt="${data[i].title}">
+        <h3 onclick="showProduct('${data[i].productid}')">${data[i].title}</h3>
+        <p class="price">₹${data[i].price}</p>
+        <p class="desc">${data[i].description}</p>
+      </div>
+`;
+            }
+
+          })
+
+
+          .catch(error => {
+            console.log("error fatching data!");
+          }
+          )
+      }
+
+
+      ProductsLoad();
+
+
+
+  
+    })
+</script>
+</body>
+</html>

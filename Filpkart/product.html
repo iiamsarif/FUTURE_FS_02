@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .product-detail-section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background-color: #f8f8f8;
+    }
+
+    .product-detail-container {
+      display: flex;
+      max-width: 1000px;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .product-image img {
+      width: 500px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-info {
+      flex-grow: 1;
+    }
+
+    .product-info h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .product-info .price {
+      font-size: 24px;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .product-info .description {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .product-actions {
+      margin-top: 20px;
+    }
+
+    .btn-buy {
+      padding: 12px 20px;
+      background-color: #2874f0;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-buy:hover {
+      background-color: #1c5bb3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .product-detail-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-image img {
+        width: 100%;
+      }
+
+      .product-info h1 {
+        font-size: 24px;
+      }
+
+      .product-info .price {
+        font-size: 20px;
+      }
+
+      .product-info .description {
+        font-size: 14px;
+      }
+
+      .btn-buy {
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+
+    .container-form {
+
+      position: absolute;
+      display: none;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+
+    }
+
+    .order-form {
+      display: none;
+      max-width: 500px;
+      max-height: 631px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    .order-form h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+
+    .two-columns {
+      display: flex;
+      gap: 16px;
+    }
+
+    .two-columns>div {
+      flex: 1;
+    }
+
+    .radio-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 10px;
+    }
+
+    .radio-options label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .order-btn {
+      display: block;
+      width: 100%;
+      background: #c8242c;
+      color: #fff;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .order-btn:hover {
+      background: #357ab8;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .order-form {
+        max-height: 700px;
+      }
+
+      .two-columns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">
+        <img src="img/filpkart.png" alt="Flipkart Logo">
+      </a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for products, brands and more">
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="user-actions">
+        <a href="/ordered">orders</a>
+        <a href="#">account</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail Section -->
+  <section class="product-detail-section">
+
+    <div class="container-form" id="containerform">
+      <section class="order-form" id="orderform">
+        <form method="post" action="/order-request">
+          <h2>Delivery Details</h2>
+
+          <div class="form-group">
+            <label for="address">Address Line</label>
+            <input type="text" id="address" name="address" required>
+          </div>
+
+          <div class="form-group two-columns">
+            <div>
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" required>
+            </div>
+            <div>
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pincode">Pin Code</label>
+            <input type="number" id="pincode" name="pincode" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="number" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="radio-options">
+              <label><input type="radio" name="payment" value="cod" required> Cash on Delivery</label>
+              <label><input type="radio" name="payment" value="upi" required> UPI Payment</label>
+            </div>
+          </div>
+
+          <button type="submit" class="order-btn">Order Now</button>
+        </form>
+      </section>
+
+    </div>
+    <div class="product-detail-container" id="product-detail-container">
+
+
+
+    </div>
+  </section>
+  <script>
+
+   
+   function Productfetch(n){
+
+      const productid = n.replace(" ", "");
+
+      fetch("/buyproduct", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ productid })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            const order_form = document.getElementById("orderform");
+            const containerform = document.getElementById("containerform");
+            containerform.style.display = "flex";
+            order_form.style.display = "block";
+
+          } else {
+            alert("Error buying product");
+          }
+        })
+        .catch(error => {
+
+          alert("error buying product!");
+        })
+
+    }
+
+
+
+ 
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+    
+      function ProductLoad() {
+        
+        fetch("/fetch-product")
+
+          .then(response => response.json())
+
+
+          .then(data => {
+            const product_table = document.getElementById("product-detail-container");
+
+            product_table.innerHTML = `     <div class="product-image">
+        <img src="img/${data.img}" alt="${data.title}">
+      </div>
+      <!-- Product Details -->
+      <div class="product-info">
+        <h1>${data.title}</h1>
+        <p class="price">$${data.price}</p>
+        <p class="description">
+          ${data.description}
+        </p>
+        <div class="product-actions">
+         <button onclick="Productfetch('${data.productid}')" class="btn-buy">Buy Now</button>
+
+        </div>
+      </div>`;
+
+          })
+
+
+          .catch(error => {
+            console.log("error fatching data!");
+          }
+          )
+      }
+
+
+      ProductLoad();
+
+
+
+
+
+    })
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+
+  <section class="orders-section">
+    <h2 class="orders-title">Your Orders</h2>
+    <div class="order-list" id="orderlist">
+
+      <div class="order-card">
+        <img src="img/p1.jpg" alt="Product 1">
+        <div class="order-info">
+          <h3>Noise Smart Watch</h3>
+          <div class="status">
+            <span class="status-dot"></span> <span>Ordered</span>
+            <span class="status-dot"></span> <span>Delivered</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-card">
+        <img src="img/p2.jpg" alt="Product 2">
+        <div class="order-info">
+          <h3>Boat Wireless Earphones</h3>
+          <div class="status">
+            <span class="status-dot"></span> <span>Ordered</span>
+            <span class="status-dot1"></span> <span>Delivered</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more orders as needed -->
+
+    </div>
+  </section>
+
+
+  
+<section class="product-tracking" id="product-tracking">
+  <div class="product-header">
+    <img src="img/p2.jpg" alt="Product">
+    <div class="product-details">
+      <h2>Galaxy M14 5G (6GB RAM, 128GB Storage)</h2>
+      <p>Order ID: #123456789</p>
+    </div>
+  </div>
+
+  <div class="tracking-flow">
+    <div class="step completed">
+      <div class="circle">1</div>
+      <span>Ordered</span>
+    </div>
+    <div class="step completed">
+      <div class="circle">2</div>
+      <span>Shipped</span>
+    </div>
+    <div class="step current">
+      <div class="circle">3</div>
+      <span>Reached</span>
+    </div>
+    <div class="step pending">
+      <div class="circle">4</div>
+      <span>Delivered</span>
+    </div>
+  </div>
+
+  <button class="cancel-btn">Cancel Order</button>
+</section>

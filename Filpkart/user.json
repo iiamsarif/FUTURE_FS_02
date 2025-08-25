@@ -1,0 +1,94 @@
+[
+  {
+    "name": "rahul",
+    "email": "rahul@gmail.com",
+    "password": "rahul",
+    "orders": [
+      {
+        "productId": "#g7h8i9j0k1l2",
+        "sellarId": "wearhouseX",
+        "img": "p3.jpg",
+        "title": "Women's casual top",
+        "orderId": "#37e4c2d7-01c4-41b2-ba0b-405548916a99-1756106989271",
+        "payment": "upi",
+        "delivery": {
+          "reach": false,
+          "shipped": false,
+          "delivered": false
+        },
+        "address": "Deganga, North 24 parganas, West Bengal",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      }
+    ]
+  },
+  {
+    "name": "sonali roy",
+    "email": "ishap7852@gmail.com",
+    "password": "rh6yt5",
+    "orders": []
+  },
+  {
+    "name": "Jeams mert",
+    "email": "jeams@example.com",
+    "password": "jeams123",
+    "orders": [
+      {
+        "productId": "#iuywqtdjbwjwu",
+        "sellarId": "sdegervereg",
+        "img": "p1.jpg",
+        "title": "Green tshirt for men",
+        "orderId": "#ea2da746-341d-4711-a504-c13b558f3c44-1748327035333",
+        "payment": "cod",
+        "delivery": {
+          "reach": false,
+          "shipped": true,
+          "delivered": false
+        },
+        "address": "North 24 parganas , deganga",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      },
+      {
+        "productId": "#iuywqtdjbwjwu",
+        "sellarId": "sdegervereg",
+        "img": "p1.jpg",
+        "title": "Green tshirt for men",
+        "orderId": "#7d168e12-a423-4def-87bd-8d9514636609-1748327044848",
+        "payment": "upi",
+        "delivery": {
+          "reach": true,
+          "shipped": true,
+          "delivered": false
+        },
+        "address": "North 24 parganas , deganga",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      },
+      {
+        "productId": "#m3n4o5p6q7r8",
+        "sellarId": "urbanlook",
+        "img": "p4.jpg",
+        "title": "Unisex Hoodie",
+        "orderId": "#2730f4cf-ffbf-4ca5-a182-20ab52d0bca4-1748440661033",
+        "payment": "cod",
+        "delivery": {
+          "reach": true,
+          "shipped": true,
+          "delivered": true
+        },
+        "address": "North 24 parganas , deganga",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      }
+    ]
+  }
+]

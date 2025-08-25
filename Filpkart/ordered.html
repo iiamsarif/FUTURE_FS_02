@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">
+        <img src="img/filpkart.png" alt="Flipkart Logo">
+      </a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for products, brands and more">
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="user-actions">
+        <a href="/ordered">orders</a>
+        <a href="#">account</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="orders-section">
+    <h2 class="orders-title">Your Orders</h2>
+    <div class="order-list" id="orderlist">
+
+ 
+
+      <!-- Add more orders as needed -->
+
+    </div>
+  </section>
+<script>
+  
+    document.addEventListener("DOMContentLoaded", () => {
+
+
+
+      function ProductsLoad() {
+        fetch("/list-orders")
+
+          .then(response => response.json())
+
+
+          .then(data => {
+            const orderss_table = document.getElementById("orderlist");
+            const length = data.length;
+            for (let i = length-1; i >=0; i--) {
+              if(data[i].delivery.delivered){
+                 orderss_table.innerHTML+=`      <div class="order-card" onclick="showOrderd('${data[i].orderId}')">
+        <img src="img/${data[i].img}" alt="Product 1">
+        <div class="order-info">
+          <h3>${data[i].title}</h3>
+          <div class="status">
+            <span class="status-dot"></span> <span>Ordered</span>
+            <span class="status-dot"></span> <span>Delivered</span>
+          </div>
+        </div>
+      </div> `;
+              }
+              else{
+ orderss_table.innerHTML+=`      <div class="order-card" onclick="showOrderd('${data[i].orderId}')">
+        <img src="img/${data[i].img}" alt="Product 1">
+        <div class="order-info">
+          <h3>${data[i].title}</h3>
+          <div class="status">
+            <span class="status-dot"></span> <span>Ordered</span>
+            <span class="status-dot1"></span> <span>Delivered</span>
+          </div>
+        </div>
+      </div> `;
+              }
+            
+            }
+
+          })
+
+
+          .catch(error => {
+            console.log("error fatching data!");
+          }
+          )
+      }
+
+
+      ProductsLoad();
+
+
+
+  
+    })
+
+
+
+    function showOrderd(n){
+
+  const orderid=n.replace(" ","");
+
+        fetch("/ordered-productid",{
+  method:"POST",
+  headers:{
+    "Content-Type": "application/json" 
+  },
+  body:JSON.stringify({orderid})
+ })
+ .then(response=>response.json())
+ .then(data=>{
+if(data.success){
+  window.location.href="/ordered-item";
+}else{
+  alert("Error fetching product");
+}
+ })
+ .catch(error=>{
+
+  alert("error fetching product!");
+ })
+
+
+}
+</script>
+
+</body>
+</html>

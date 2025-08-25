@@ -1,0 +1,165 @@
+[
+  {
+    "name": "Sarif",
+    "password": "sarif123",
+    "sallerid": "seller123",
+    "email": "sarif@gmail.com",
+    "shop": "myhouse",
+    "products": [
+      "#a1b2c3d4e5f6"
+    ],
+    "orders": []
+  },
+  {
+    "name": "Ravi",
+    "password": "ravi123",
+    "sallerid": "sdegervereg",
+    "email": "ravi@example.com",
+    "shop": "fashion gallery",
+    "products": [
+      "#iuywqtdjbwjwu"
+    ],
+    "orders": [
+      {
+        "productId": "#iuywqtdjbwjwu",
+        "sellarId": "sdegervereg",
+        "img": "p1.jpg",
+        "title": "Green tshirt for men",
+        "orderId": "#ea2da746-341d-4711-a504-c13b558f3c44-1748327035333",
+        "payment": "cod",
+        "delivery": {
+          "reach": false,
+          "shipped": false,
+          "delivered": false
+        },
+        "address": "North 24 parganas , deganga",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      },
+      {
+        "productId": "#iuywqtdjbwjwu",
+        "sellarId": "sdegervereg",
+        "img": "p1.jpg",
+        "title": "Green tshirt for men",
+        "orderId": "#7d168e12-a423-4def-87bd-8d9514636609-1748327044848",
+        "payment": "upi",
+        "delivery": {
+          "reach": false,
+          "shipped": false,
+          "delivered": false
+        },
+        "address": "North 24 parganas , deganga",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      }
+    ]
+  },
+  {
+    "name": "Neha",
+    "password": "neha123",
+    "sallerid": "wearhouseX",
+    "email": "neha@wearhousex.com",
+    "shop": "WearHouseX",
+    "products": [
+      "#g7h8i9j0k1l2"
+    ],
+    "orders": [
+      {
+        "productId": "#g7h8i9j0k1l2",
+        "sellarId": "wearhouseX",
+        "img": "p3.jpg",
+        "title": "Women's casual top",
+        "orderId": "#37e4c2d7-01c4-41b2-ba0b-405548916a99-1756106989271",
+        "payment": "upi",
+        "delivery": {
+          "reach": false,
+          "shipped": false,
+          "delivered": false
+        },
+        "address": "Deganga, North 24 parganas, West Bengal",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      }
+    ]
+  },
+  {
+    "name": "Amit",
+    "password": "amit123",
+    "sallerid": "urbanlook",
+    "email": "amit@urbanlook.com",
+    "shop": "Urban Look",
+    "products": [
+      "#m3n4o5p6q7r8"
+    ],
+    "orders": [
+      {
+        "productId": "#m3n4o5p6q7r8",
+        "sellarId": "urbanlook",
+        "img": "p4.jpg",
+        "title": "Unisex Hoodie",
+        "orderId": "#2730f4cf-ffbf-4ca5-a182-20ab52d0bca4-1748440661033",
+        "payment": "cod",
+        "delivery": {
+          "reach": false,
+          "shipped": false,
+          "delivered": false
+        },
+        "address": "North 24 parganas , deganga",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "743423",
+        "phone": "04325346316"
+      }
+    ]
+  },
+  {
+    "name": "Sneha",
+    "password": "sneha123",
+    "sallerid": "trendystylez",
+    "email": "sneha@trendy.com",
+    "shop": "Trendy Stylez",
+    "products": [
+      "#s9t0u1v2w3x4"
+    ],
+    "orders": []
+  },
+  {
+    "name": "Rahul",
+    "password": "rahul123",
+    "sallerid": "fashionzone",
+    "email": "rahul@fashionzone.com",
+    "shop": "Fashion Zone",
+    "products": [
+      "#y5z6a7b8c9d0"
+    ],
+    "orders": []
+  },
+  {
+    "name": "Priya",
+    "password": "priya123",
+    "sallerid": "coolwear",
+    "email": "priya@coolwear.com",
+    "shop": "CoolWear",
+    "products": [
+      "#e1f2g3h4i5j6"
+    ],
+    "orders": []
+  },
+  {
+    "name": "Karan",
+    "password": "karan123",
+    "sallerid": "bestfashion",
+    "email": "karan@bestfashion.com",
+    "shop": "Best Fashion",
+    "products": [
+      "#k7l8m9n0o1p2"
+    ],
+    "orders": []
+  }
+]

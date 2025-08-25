@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">
+        <img src="img/filpkart.png" alt="Flipkart Logo">
+      </a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for products, brands and more">
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="user-actions">
+        <a href="/ordered">orders</a>
+        <a href="#">account</a>
+      </div>
+    </div>
+  </header>
+<section class="product-tracking" id="product-tracking">
+ 
+</section>
+
+<script>
+      document.addEventListener("DOMContentLoaded", () => {
+
+    
+      function ProductLoad() {
+        
+        fetch("/ordered-product")
+
+          .then(response => response.json())
+
+
+          .then(data => {
+    const product_table=document.getElementById("product-tracking");
+
+if(data.delivery.reach==true && data.delivery.shipped==true && data.delivery.delivered==true){
+
+  product_table.innerHTML=` <div class="product-header">
+    <img src="img/${data.img}" alt="Product">
+    <div class="product-details">
+      <h2>${data.title}</h2>
+      <p>Order ID: ${data.orderId}</p>
+    </div>
+  </div>
+
+  <div class="tracking-flow">
+    <div class="step completed">
+      <div class="circle">1</div>
+      <span>Ordered</span>
+    </div>
+    <div class="step completed">
+      <div class="circle">2</div>
+      <span>Shipped</span>
+    </div>
+    <div class="step current">
+      <div class="circle">3</div>
+      <span>Reached</span>
+    </div>
+    <div class="step current">
+      <div class="circle">4</div>
+      <span>Delivered</span>
+    </div>
+  </div>
+
+  <button class="cancel-btn">Cancel Order</button>`
+
+
+}
+else if(data.delivery.reach==true && data.delivery.shipped==true && data.delivery.delivered==false){
+
+            product_table.innerHTML=` <div class="product-header">
+    <img src="img/${data.img}" alt="Product">
+    <div class="product-details">
+      <h2>${data.title}</h2>
+      <p>Order ID: ${data.orderId}</p>
+    </div>
+  </div>
+
+  <div class="tracking-flow">
+    <div class="step completed">
+      <div class="circle">1</div>
+      <span>Ordered</span>
+    </div>
+    <div class="step completed">
+      <div class="circle">2</div>
+      <span>Shipped</span>
+    </div>
+    <div class="step current">
+      <div class="circle">3</div>
+      <span>Reached</span>
+    </div>
+    <div class="step pending">
+      <div class="circle">4</div>
+      <span>Delivered</span>
+    </div>
+  </div>
+
+  <button class="cancel-btn">Cancel Order</button>`
+
+
+}
+else if(data.delivery.reach==false && data.delivery.shipped==true && data.delivery.delivered==false){
+
+            product_table.innerHTML=` <div class="product-header">
+    <img src="img/${data.img}" alt="Product">
+    <div class="product-details">
+      <h2>${data.title}</h2>
+      <p>Order ID: ${data.orderId}</p>
+    </div>
+  </div>
+
+  <div class="tracking-flow">
+    <div class="step completed">
+      <div class="circle">1</div>
+      <span>Ordered</span>
+    </div>
+    <div class="step completed">
+      <div class="circle">2</div>
+      <span>Shipped</span>
+    </div>
+    <div class="step pending">
+      <div class="circle">3</div>
+      <span>Reached</span>
+    </div>
+    <div class="step pending">
+      <div class="circle">4</div>
+      <span>Delivered</span>
+    </div>
+  </div>
+
+  <button class="cancel-btn">Cancel Order</button>`
+}
+else{
+
+  
+            product_table.innerHTML=` <div class="product-header">
+    <img src="img/${data.img}" alt="Product">
+    <div class="product-details">
+      <h2>${data.title}</h2>
+      <p>Order ID: ${data.orderId}</p>
+    </div>
+  </div>
+
+  <div class="tracking-flow">
+    <div class="step completed">
+      <div class="circle">1</div>
+      <span>Ordered</span>
+    </div>
+    <div class="step pending">
+      <div class="circle">2</div>
+      <span>Shipped</span>
+    </div>
+    <div class="step pending">
+      <div class="circle">3</div>
+      <span>Reached</span>
+    </div>
+    <div class="step pending">
+      <div class="circle">4</div>
+      <span>Delivered</span>
+    </div>
+  </div>
+
+  <button class="cancel-btn">Cancel Order</button>`
+}
+          })
+
+
+          .catch(error => {
+            console.log("error fatching data!");
+          }
+          )
+      }
+
+
+      ProductLoad();
+
+
+
+
+
+    })
+</script>
+
+</body>
+</html>
